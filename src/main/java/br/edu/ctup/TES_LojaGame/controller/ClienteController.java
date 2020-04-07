@@ -46,5 +46,11 @@ public class ClienteController {
 		return cliente;
 		
 	}
+	
+	@GetMapping("/nome={nome}")
+	public @ResponseBody Iterable<Cliente> getAllByName(@PathVariable String nome) {
+		Iterable<Cliente> cliente = repository.getAllByName(nome);
+		return cliente;
+	}
 
 }

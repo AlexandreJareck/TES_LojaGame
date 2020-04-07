@@ -47,4 +47,10 @@ public class JogoController {
 		
 	}
 	
+	@GetMapping("/titulo={titulo}")
+	public @ResponseBody Iterable<Jogo> getAllByStatus(@PathVariable String titulo) {
+		Iterable<Jogo> jogo = repository.getAllByTitle(titulo);
+		return jogo;
+	}
+	
 }
